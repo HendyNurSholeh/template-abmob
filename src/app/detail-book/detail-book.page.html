@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detail Book</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding fullscreen="false">
+  <ion-card>
+    <!-- <preload-image [ratio]="{w: 1, h: 1}" [src]="item.image"></preload-image> -->
+    <ion-card-header>
+      <ion-card-title>{{book.title}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <img alt="Boku No Hero Academia" src="assets/images/{{book.cover}}" />
+      <ion-card-subtitle class="ion-text-end"
+        >-{{book.title}}</ion-card-subtitle
+      >
+
+      {{book.description}}
+      <!-- <div class="ion-text-end btn-read">
+        <ion-button class="ion-text-center">Baca Buku</ion-button>
+      </div> -->
+    </ion-card-content>
+  </ion-card>
+</ion-content>

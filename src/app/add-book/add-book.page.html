@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Tambah Book</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-fab href="/add-book" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-item>
+    <ion-input
+      [(ngModel)]="newBook.title"
+      label="Judul"
+      labelPlacement="stacked"
+      placeholder="Masukkan Judul Buku"
+    ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input
+      [(ngModel)]="newBook.description"
+      label="Deskripsi"
+      labelPlacement="stacked"
+      placeholder="Masukkan Deskripsi"
+    ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input
+      type="file"
+      label="Deskripsi"
+      labelPlacement="stacked"
+      placeholder="Masukkan Deskripsi"
+    ></ion-input>
+  </ion-item>
+
+  <ion-button (click)="addBook()">Tambah Buku</ion-button>
+</ion-content>

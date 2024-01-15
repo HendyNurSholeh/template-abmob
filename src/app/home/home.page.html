@@ -1,0 +1,79 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <strong>Ready to create an app?</strong>
+    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  </div>
+</ion-content> -->
+
+<ion-header>
+  <ion-toolbar mode="md">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">My Collection Books</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let book of books" size="4">
+        <ion-card (click)="goToDetailsView(book.id)">
+          <!-- Gambar Sampul Buku -->
+          <img
+            src="assets/images/{{ book.cover }}"
+            alt="judul"
+            style="width: 100%; height: 130px; object-fit: cover"
+          />
+
+          <!-- Isi konten kartu dengan informasi buku -->
+          <ion-card-header>
+            <ion-card-title class="title-small"
+              >{{ book.title }}</ion-card-title
+            >
+          </ion-card-header>
+          <ion-card-content>
+            <p class="title-small">{{ book.description }}</p>
+            <!-- Anda dapat menambahkan informasi buku lainnya di sini -->
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button href="/add-book">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-item>
+    <ion-input
+      [(ngModel)]="newBook.title"
+      label="judul"
+      labelPlacement="stacked"
+      placeholder="Masukkan Judul Buku"
+    ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input
+      [(ngModel)]="newBook.description"
+      label="deskripsi"
+      labelPlacement="stacked"
+      placeholder="Masukkan Deskripsi"
+    ></ion-input>
+  </ion-item>
+
+  <ion-button (click)="addBook()">Tambah Buku</ion-button>
+</ion-content>

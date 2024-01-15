@@ -1,0 +1,7 @@
+{
+  "name": "app-mobile-list-book",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
